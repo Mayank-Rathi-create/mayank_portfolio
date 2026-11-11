@@ -40,3 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
         'color: #64748b; font-size: 11px;'
     );
 });
+
