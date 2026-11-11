@@ -30,10 +30,10 @@
       "title": "URL Checker",
       "description": "A URL checker that checks if a URL is safe to visit or not by comparying it with the original and verified URL's and using AI",
       "stack": "Python, Streamlit",
-      "url": "https://mayank-portfolio.streamlit.app/"
+      "url": "https://url-checker1.streamlit.app/"
     },
     {
-      "title": "Road Watch",
+      "title": "Civic Connect",
       "description": "A web app designed to improve road safety by reporting hazardous conditions and alerting municipal authorities to potential dangers.",
       "stack": "Python, Streamlit",
       "url": "https://fix-potholes.streamlit.app/"
@@ -53,7 +53,7 @@
   ],
   "blogs": [
     {
-      "title": "DSA learning",
+      "title": "learning DSA",
       "date": "September 2026",
       "excerpt": "I am currently doing DSA practice on LeetCode and exploring the fundamentals of data structures and algorithms.",
       "tags": [
