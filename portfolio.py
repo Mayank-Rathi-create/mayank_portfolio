@@ -44,6 +44,12 @@ PROFILE = {
 
 PROJECTS = [
     {
+        "title": "Mayuri printers",
+        "description": "A web app that allows users to order customized printed products online, and see the products avilable in that printing factory.",
+        "stack": "Typescript, CSS, HTML",
+        "url": "https://mayuri-printers.vercel.app/"
+    },
+    {
         "title": "URL Checker",
         "description": "A URL checker that checks if a URL is safe to visit or not by comparying it with the original and verified URL's and using AI",
         "stack": "Python, Streamlit",
@@ -754,4 +760,4 @@ st.html(
     <div>PORTFOLIO ARCHIVE</div>
 </div>
 """
-)
+)
