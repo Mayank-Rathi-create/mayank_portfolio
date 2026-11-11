@@ -1,0 +1,85 @@
+{
+  "profile": {
+    "name": "Mayank Rathi",
+    "role": "CSE student building toward a career in cybersecurity.",
+    "bio": "First-year Computer Science Engineering student with a focus on cybersecurity. Currently learning Python, C, and the fundamentals of how systems work, and building hands-on projects as I go.",
+    "focus_areas": [
+      "Vibe coding",
+      "Python",
+      "C",
+      "Streamlit",
+      "problem solving",
+      "web security",
+      "networking fundamentals",
+      "Data structures and algorithms"
+    ],
+    "email": "mayankrathinp@gmail.com",
+    "github": "https://github.com/Mayank-Rathi-create",
+    "instagram": "https://www.instagram.com/mayank_rathi11/",
+    "discord": "https://discord.com/channels/@mayankrathi0719",
+    "linkedin": "https://www.linkedin.com/in/mayank-rathi-555007427/"
+  },
+  "projects": [
+    {
+      "title": "Mayuri printers",
+      "description": "A web app that allows users to order customized printed products online, and see the products avilable in that printing factory.",
+      "stack": "Typescript, CSS, HTML",
+      "url": "https://mayuri-printers.vercel.app/"
+    },
+    {
+      "title": "URL Checker",
+      "description": "A URL checker that checks if a URL is safe to visit or not by comparying it with the original and verified URL's and using AI",
+      "stack": "Python, Streamlit",
+      "url": "https://mayank-portfolio.streamlit.app/"
+    },
+    {
+      "title": "Road Watch",
+      "description": "A web app designed to improve road safety by reporting hazardous conditions and alerting municipal authorities to potential dangers.",
+      "stack": "Python, Streamlit",
+      "url": "https://fix-potholes.streamlit.app/"
+    },
+    {
+      "title": "Portfolio website",
+      "description": "A personal portfolio website to showcase my projects, skills, and professional background.",
+      "stack": "Python, Streamlit",
+      "url": "https://mayank-portfolio.streamlit.app/"
+    },
+    {
+      "title": "Number guessing game",
+      "description": "A simple interactive Python game that narrows down a hidden number using guess-and-check logic.",
+      "stack": "Python",
+      "url": "https://github.com/Mayank-Rathi-create/number_guess.git"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "DSA learning",
+      "date": "September 2026",
+      "excerpt": "I am currently doing DSA practice on LeetCode and exploring the fundamentals of data structures and algorithms.",
+      "tags": [
+        "DSA",
+        "LeetCode",
+        "Problem Solving"
+      ]
+    },
+    {
+      "title": "Computer Networking Basics",
+      "date": "September 2026",
+      "excerpt": "I am currently learning the basics of computer networking and exploring the fundamentals of cybersecurity.",
+      "tags": [
+        "Networking",
+        "Cybersecurity"
+      ]
+    },
+    {
+      "title": "C and Python Programming",
+      "date": "September 2026",
+      "excerpt": "I am currently learning the C and Python programming languages and exploring their applications in system-level programming.",
+      "tags": [
+        "C",
+        "Python",
+        "Programming"
+      ]
+    }
+  ]
+}
