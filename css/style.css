@@ -146,12 +146,14 @@ div[data-testid="stToolbar"] {
 /* ============================================================
    CONTAINER & LAYOUT
    ============================================================ */
-.page-container {
+.page-container,
+.page-wrapper {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1.5rem;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* ============================================================
@@ -255,6 +257,19 @@ div[data-testid="stToolbar"] {
     border-color: var(--border-strong);
 }
 
+/* Dossier bar compatibility */
+.dossier-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 1.5rem;
+}
+
 /* Mobile Nav Toggle */
 .mobile-nav-toggle {
     display: none;
@@ -341,12 +356,13 @@ div[data-testid="stToolbar"] {
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6.5vw, 4rem);
+    font-size: clamp(2rem, 7vw, 3.75rem);
     font-weight: 700;
     color: var(--text-headline);
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.035em;
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
 }
 
 .hero-headline {
@@ -375,7 +391,8 @@ div[data-testid="stToolbar"] {
 }
 
 /* Button System */
-.btn {
+.btn,
+.action-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -402,16 +419,18 @@ div[data-testid="stToolbar"] {
     color: #090a0f !important;
 }
 
-.btn-secondary {
+.btn-secondary,
+.action-btn {
     background: var(--bg-surface);
     color: var(--text-headline) !important;
     border: 1px solid var(--border-strong);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.action-btn:hover {
     background: var(--bg-surface-elevated);
     border-color: var(--accent-cyan);
-    color: var(--text-headline) !important;
+    color: var(--accent-cyan-hover) !important;
 }
 
 .hero-socials {
@@ -578,7 +597,8 @@ div[data-testid="stToolbar"] {
 /* ============================================================
    PROJECTS SECTION
    ============================================================ */
-.projects-grid {
+.projects-grid,
+.project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
@@ -593,6 +613,8 @@ div[data-testid="stToolbar"] {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    text-decoration: none;
+    color: inherit;
     transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -618,7 +640,8 @@ div[data-testid="stToolbar"] {
     line-height: 1.3;
 }
 
-.project-link-badge {
+.project-link-badge,
+.project-link-action {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
@@ -635,12 +658,14 @@ div[data-testid="stToolbar"] {
     transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.project-link-badge:hover {
+.project-link-badge:hover,
+.project-link-action:hover {
     background: rgba(56, 189, 248, 0.18);
     border-color: var(--accent-cyan);
 }
 
-.project-description {
+.project-description,
+.project-brief {
     font-size: 0.93rem;
     color: var(--text-body);
     line-height: 1.65;
@@ -673,7 +698,8 @@ div[data-testid="stToolbar"] {
     gap: 0.45rem;
 }
 
-.stack-tag {
+.stack-tag,
+.project-stack-tags {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-secondary);
@@ -902,8 +928,9 @@ input:focus-visible {
     }
 }
 
-@media (max-width: 720px) {
-    .projects-grid {
+@media (max-width: 768px) {
+    .projects-grid,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
@@ -950,7 +977,8 @@ input:focus-visible {
         align-items: stretch;
     }
 
-    .hero-actions .btn {
+    .hero-actions .btn,
+    .hero-actions .action-btn {
         width: 100%;
     }
 

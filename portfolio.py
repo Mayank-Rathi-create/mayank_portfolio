@@ -239,7 +239,7 @@ projects_html = f"""
         <h2 class="section-title">Projects</h2>
         <p class="section-description">Functional prototypes and applications built to solve real-world tasks and reinforce programming concepts.</p>
     </div>
-    <div class="projects-grid">
+    <div class="projects-grid project-grid">
         {''.join(project_cards)}
     </div>
 </section>
