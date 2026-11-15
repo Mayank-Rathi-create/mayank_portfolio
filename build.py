@@ -212,16 +212,6 @@ def build():
             <p class="hero-headline">{profile['headline']}</p>
             <p class="hero-bio">{profile['bio']}</p>
 
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
-                    <span>View projects</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <span>Contact me</span>
-                </a>
-            </div>
-
             <div class="hero-socials" aria-label="Direct profiles and contact">
                 <span class="hero-socials-label">Connect:</span>
                 <a href="mailto:{profile['email']}" class="social-pill" aria-label="Email {profile['name']}">

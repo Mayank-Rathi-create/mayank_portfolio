@@ -121,16 +121,6 @@ hero_html = f"""
     <p class="hero-headline">{PROFILE['headline']}</p>
     <p class="hero-bio">{PROFILE['bio']}</p>
 
-    <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">
-            <span>View projects</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </a>
-        <a href="#contact" class="btn btn-secondary">
-            <span>Contact me</span>
-        </a>
-    </div>
-
     <div class="hero-socials">
         <span class="hero-socials-label">Connect:</span>
         <a href="mailto:{PROFILE['email']}" class="social-pill">{ICONS['email']}<span>Email</span></a>
