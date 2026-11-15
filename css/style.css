@@ -37,6 +37,7 @@
     --radius-md: 10px;
     --radius-lg: 14px;
     --radius-full: 9999px;
+    --header-height: 56px;
 
     /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -151,31 +152,32 @@ div[data-testid="stToolbar"] {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1.5rem;
+    padding: var(--header-height) 1.5rem 0;
     width: 100%;
     box-sizing: border-box;
 }
 
 /* ============================================================
-   SITE HEADER & NAVIGATION
+   SITE HEADER & NAVIGATION (PINNED TO TOP)
    ============================================================ */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    background-color: rgba(9, 10, 15, 0.92);
+    background-color: rgba(9, 10, 15, 0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-subtle);
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header-inner {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0.9rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -297,8 +299,13 @@ div[data-testid="stToolbar"] {
    SECTIONS & TYPOGRAPHY
    ============================================================ */
 .section {
-    padding: 4.5rem 0;
+    padding: 2.75rem 0;
     border-bottom: 1px solid var(--border-subtle);
+}
+
+section[id],
+.section[id] {
+    scroll-margin-top: calc(var(--header-height) + 14px);
 }
 
 .section:last-of-type {
@@ -306,7 +313,7 @@ div[data-testid="stToolbar"] {
 }
 
 .section-header {
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-label {
@@ -316,7 +323,7 @@ div[data-testid="stToolbar"] {
     color: var(--accent-cyan);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
 .section-title {
@@ -326,21 +333,21 @@ div[data-testid="stToolbar"] {
     color: var(--text-headline);
     letter-spacing: -0.03em;
     line-height: 1.2;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.45rem;
 }
 
 .section-description {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.95rem;
     max-width: 680px;
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 /* ============================================================
    HERO SECTION
    ============================================================ */
 .hero-section {
-    padding: 5rem 0 4.5rem;
+    padding: 2.75rem 0 2.25rem;
 }
 
 .hero-greeting {
@@ -348,7 +355,7 @@ div[data-testid="stToolbar"] {
     font-size: 0.85rem;
     color: var(--accent-cyan);
     font-weight: 500;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -361,7 +368,7 @@ div[data-testid="stToolbar"] {
     color: var(--text-headline);
     line-height: 1.15;
     letter-spacing: -0.035em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
     overflow-wrap: break-word;
 }
 
@@ -370,7 +377,7 @@ div[data-testid="stToolbar"] {
     color: #e2e8f0;
     font-weight: 500;
     line-height: 1.45;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.15rem;
     max-width: 780px;
 }
 
@@ -378,7 +385,7 @@ div[data-testid="stToolbar"] {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 1.7;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.75rem;
     max-width: 700px;
 }
 
@@ -387,7 +394,7 @@ div[data-testid="stToolbar"] {
     flex-wrap: wrap;
     gap: 0.85rem;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
 }
 
 /* Button System */
@@ -540,15 +547,19 @@ div[data-testid="stToolbar"] {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: 1.6rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .skill-category-header {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.15rem;
     padding-bottom: 0.85rem;
     border-bottom: 1px solid var(--border-subtle);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .skill-category-title {
@@ -569,8 +580,8 @@ div[data-testid="stToolbar"] {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: auto;
+    gap: 0.95rem;
+    margin-top: 0;
 }
 
 .skill-item {
@@ -608,7 +619,7 @@ div[data-testid="stToolbar"] {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: 1.75rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -722,7 +733,7 @@ div[data-testid="stToolbar"] {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: 1.6rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -777,13 +788,13 @@ div[data-testid="stToolbar"] {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    padding: 2.5rem;
+    padding: 2rem;
 }
 
 .contact-layout {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 2.5rem;
+    gap: 2rem;
     align-items: start;
 }
 
@@ -791,7 +802,7 @@ div[data-testid="stToolbar"] {
     font-size: 1.05rem;
     color: var(--text-body);
     line-height: 1.7;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-actions {
@@ -853,7 +864,7 @@ div[data-testid="stToolbar"] {
    FOOTER
    ============================================================ */
 .site-footer {
-    padding: 2.5rem 0 3.5rem;
+    padding: 1.75rem 0 2.25rem;
     border-top: 1px solid var(--border-subtle);
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -969,7 +980,11 @@ input:focus-visible {
     }
 
     .hero-section {
-        padding: 3.5rem 0 3rem;
+        padding: 2rem 0 1.75rem;
+    }
+
+    .section {
+        padding: 2.25rem 0;
     }
 
     .hero-actions {
@@ -983,7 +998,7 @@ input:focus-visible {
     }
 
     .contact-wrapper {
-        padding: 1.75rem 1.25rem;
+        padding: 1.5rem 1.15rem;
     }
 }
 

@@ -90,7 +90,7 @@ st.markdown(
 # 1. Header / Navigation
 st.html(
     f"""
-<header class="site-header" style="margin-bottom: 2rem;">
+<header class="site-header">
     <div class="header-inner">
         <a href="#hero" class="brand-link">
             <span class="brand-mark">MR</span>
