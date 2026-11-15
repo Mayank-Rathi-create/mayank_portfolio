@@ -1,43 +1,78 @@
 /**
- * Mayank Rathi — Portfolio
- * Lightweight client interactions & subtle interactive enhancements
+ * Mayank Rathhi — Personal Portfolio
+ * Accessible client interactions: navigation toggle, clipboard utility, dynamic year
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Dynamic Year in Footer
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 
-    // 2. Interactive Card Spotlight / Glow on mouse movement
-    const cards = document.querySelectorAll('.project-card, .chronicle-item, .contact-card');
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (!prefersReducedMotion) {
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+    // 2. Mobile Navigation Toggle
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (navToggle && navLinks) {
+        const toggleNav = () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navLinks.classList.toggle('is-open', !isExpanded);
+        };
+
+        navToggle.addEventListener('click', toggleNav);
+
+        // Close menu when clicking any nav link
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('is-open')) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navLinks.classList.remove('is-open');
+                }
             });
+        });
+
+        // Close on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('is-open');
+                navToggle.focus();
+            }
         });
     }
 
-    // 3. Console Easter Egg for Cybersecurity / CSE peers
-    console.log(
-        '%c✦ Mayank Rathi %c| CSE & Cybersecurity Explorer',
-        'color: #38bdf8; font-weight: bold; font-size: 14px;',
-        'color: #94a3b8; font-size: 13px;'
-    );
-    console.log(
-        '%cInterested in collaborating or checking out systems code? Reach out via email or GitHub!',
-        'color: #64748b; font-size: 11px;'
-    );
-});
+    // 3. Accessible Email Copy Helper
+    const copyBtn = document.getElementById('copy-email-btn');
+    const statusMsg = document.getElementById('copy-status');
+    const emailToCopy = 'mayankrathinp@gmail.com';
 
+    if (copyBtn && statusMsg) {
+        copyBtn.addEventListener('click', async () => {
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(emailToCopy);
+                    statusMsg.textContent = 'Email address copied to clipboard.';
+                } else {
+                    // Fallback
+                    const textArea = document.createElement('textarea');
+                    textArea.value = emailToCopy;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    statusMsg.textContent = 'Email address copied to clipboard.';
+                }
+
+                setTimeout(() => {
+                    statusMsg.textContent = '';
+                }, 3000);
+            } catch (err) {
+                statusMsg.textContent = `Email: ${emailToCopy}`;
+            }
+        });
+    }
+});

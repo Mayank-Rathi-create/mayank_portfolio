@@ -1,80 +1,86 @@
 {
   "profile": {
-    "name": "Mayank Rathi",
+    "name": "Mayank Rathhi",
+    "headline": "First-year Computer Science Engineering student exploring cybersecurity.",
     "role": "CSE student building toward a career in cybersecurity.",
-    "bio": "First-year Computer Science Engineering student with a focus on cybersecurity. Currently learning Python, C, and the fundamentals of how systems work, and building hands-on projects as I go.",
-    "focus_areas": [
-      "Vibe coding",
-      "Python",
-      "C",
-      "Streamlit",
-      "problem solving",
-      "web security",
-      "networking fundamentals",
-      "Data structures and algorithms"
-    ],
+    "bio": "I am a first-year Computer Science Engineering student exploring cybersecurity. I am learning Python, C, networking fundamentals, and data structures and algorithms, building hands-on projects as I go.",
+    "about": "I focus on understanding how computing systems, networks, and software operate under the hood. Alongside my academic coursework, I build practical tools—from web apps to low-level prototypes—to turn theoretical concepts into working knowledge. My goal is to develop a strong technical foundation in systems programming, networking protocols, and practical security principles.",
     "email": "mayankrathinp@gmail.com",
     "github": "https://github.com/Mayank-Rathi-create",
-    "instagram": "https://www.instagram.com/mayank_rathi11/",
+    "linkedin": "https://www.linkedin.com/in/mayank-rathi-555007427/",
     "discord": "https://discord.com/channels/@mayankrathi0719",
-    "linkedin": "https://www.linkedin.com/in/mayank-rathi-555007427/"
+    "discord_handle": "mayankrathi0719",
+    "instagram": "https://www.instagram.com/mayank_rathi11/"
+  },
+  "skills": {
+    "programming": [
+      { "name": "Python", "note": "Primary scripting & prototyping language" },
+      { "name": "C", "note": "Systems fundamentals & memory concepts" }
+    ],
+    "web_and_tools": [
+      { "name": "TypeScript", "note": "Application frontend" },
+      { "name": "HTML5 & CSS3", "note": "Semantic structure & responsive layouts" },
+      { "name": "Streamlit", "note": "Rapid Python app interfaces" },
+      { "name": "Git & GitHub", "note": "Version control & collaboration" }
+    ],
+    "current_learning": [
+      { "name": "Networking Fundamentals", "note": "TCP/IP, DNS, OSI model & packet routing" },
+      { "name": "Web Security Basics", "note": "Common web vulnerabilities & authentication" },
+      { "name": "Data Structures & Algorithms", "note": "Arrays, search, recursion & complexity analysis" }
+    ]
   },
   "projects": [
     {
-      "title": "Mayuri printers",
-      "description": "A web app that allows users to order customized printed products online, and see the products avilable in that printing factory.",
-      "stack": "Typescript, CSS, HTML",
-      "url": "https://mayuri-printers.vercel.app/"
+      "title": "Mayuri Printers",
+      "description": "A web application built for a local printing business that allows customers to browse catalog products and submit customized print requests online.",
+      "stack": ["TypeScript", "CSS", "HTML"],
+      "demonstrates": "Frontend development, responsive catalog design, and customer order flow.",
+      "url": "https://mayuri-printers.vercel.app/",
+      "is_external": true
     },
     {
       "title": "URL Checker",
-      "description": "A URL checker that checks if a URL is safe to visit or not by comparying it with the original and verified URL's and using AI",
-      "stack": "Python, Streamlit",
-      "url": "https://url-checker1.streamlit.app/"
+      "description": "An experimental security prototype that inspects submitted links against known domain patterns and heuristic risk indicators. Evaluates common deceptive cues without making absolute safety guarantees.",
+      "stack": ["Python", "Streamlit"],
+      "demonstrates": "URL parsing, rule-based heuristics, and interactive security prototyping.",
+      "url": "https://mayank-portfolio.streamlit.app/",
+      "is_external": true
     },
     {
       "title": "Civic Connect",
-      "description": "A web app designed to improve road safety by reporting hazardous conditions and alerting municipal authorities to potential dangers.",
-      "stack": "Python, Streamlit",
-      "url": "https://fix-potholes.streamlit.app/"
+      "description": "A civic reporting web app designed to document road hazards and potholes, gathering location-specific issue reports to help municipal authorities prioritize maintenance.",
+      "stack": ["Python", "Streamlit"],
+      "demonstrates": "Incident submission workflows, data validation, and community problem solving.",
+      "url": "https://fix-potholes.streamlit.app/",
+      "is_external": true
     },
     {
-      "title": "Portfolio website",
-      "description": "A personal portfolio website to showcase my projects, skills, and professional background.",
-      "stack": "Python, Streamlit",
-      "url": "https://mayankportfolio-chi.vercel.app/"
+      "title": "Portfolio Website",
+      "description": "A personal portfolio built with semantic HTML5, modern CSS, and clean accessibility practices. Designed for zero-config Vercel edge deployment with an accompanying Streamlit mode.",
+      "stack": ["HTML5", "CSS3", "JavaScript", "Python"],
+      "demonstrates": "Semantic web architecture, WCAG accessibility, responsive design, and multi-environment deployment.",
+      "url": "https://github.com/Mayank-Rathi-create/Mayank-portfolio",
+      "is_external": true
     }
   ],
-  "blogs": [
+  "learning_dispatches": [
     {
-      "title": "learning DSA",
-      "date": "September 2026",
-      "excerpt": "I am currently doing DSA practice on LeetCode and exploring the fundamentals of data structures and algorithms.",
-      "tags": [
-        "DSA",
-        "LeetCode",
-        "Problem Solving"
-      ]
+      "topic": "Data Structures & Algorithms",
+      "status": "Active practice",
+      "focus": "LeetCode problem solving & complexity analysis",
+      "description": "Working through fundamental problems in arrays, two-pointer techniques, strings, and recursion, with an emphasis on evaluating time and space trade-offs."
     },
     {
-      "title": "Computer Networking Basics",
-      "date": "September 2026",
-      "excerpt": "I am currently learning the basics of computer networking and exploring the fundamentals of cybersecurity.",
-      "tags": [
-        "Networking",
-        "Cybersecurity"
-      ]
+      "topic": "Computer Networking Fundamentals",
+      "status": "Active study",
+      "focus": "Protocol stacks & traffic fundamentals",
+      "description": "Studying how data moves across networks through the TCP/IP stack, DNS resolution stages, and socket basics to build a foundation for cybersecurity analysis."
     },
     {
-      "title": "C and Python Programming",
-      "date": "September 2026",
-      "excerpt": "I am currently learning the C and Python programming languages and exploring their applications in system-level programming.",
-      "tags": [
-        "C",
-        "Python",
-        "Programming"
-      ]
+      "topic": "C & Systems Programming",
+      "status": "Active study",
+      "focus": "Memory model & pointer manipulation",
+      "description": "Writing C code to build intuitive understanding of stack vs. heap allocation, pointer arithmetic, and structs—essential for understanding system-level security."
     }
   ]
 }
-

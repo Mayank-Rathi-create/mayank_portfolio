@@ -1,6 +1,6 @@
-# Mayank Rathi — Portfolio
+# Mayank Rathhi — Portfolio
 
-A minimalist, high-performance portfolio website built with clean web standards and designed for zero-config, instant deployment on **Vercel** (as well as Python/Streamlit environments).
+A calm, technical, high-performance personal portfolio website built with semantic HTML5, modern CSS, and clean accessibility practices. Designed for zero-config edge deployment on **Vercel** with a companion **Python / Streamlit** mode.
 
 ---
 
@@ -12,27 +12,22 @@ This repository is optimized for Vercel out of the box with zero build setup req
 1. Push your repository to **GitHub**:
    ```bash
    git add .
-   git commit -m "Organize code for Vercel deployment"
+   git commit -m "Enhance portfolio structure and accessibility"
    git push origin main
    ```
 2. Go to [vercel.com](https://vercel.com) and log in.
 3. Click **"Add New..."** > **"Project"**.
 4. Select your **`Mayank-portfolio`** repository.
-5. In the project settings:
-   - **Framework Preset**: *Other* (or auto-detected Static Site)
+5. In project settings:
+   - **Framework Preset**: *Other* (auto-detected Static Site)
    - **Root Directory**: `./`
    - **Build Command**: *Leave empty*
    - **Output Directory**: *Leave empty*
-6. Click **Deploy**. Your portfolio will be live worldwide in seconds!
+6. Click **Deploy**. Your site will be live globally in seconds!
 
 ### Option 2: Deploy using Vercel CLI
-If you have Node.js / Vercel CLI installed:
 ```bash
 npm i -g vercel
-vercel
-```
-Follow the quick CLI prompts to deploy. For production deployment, run:
-```bash
 vercel --prod
 ```
 
@@ -42,56 +37,51 @@ vercel --prod
 
 ```
 Mayank-portfolio/
-├── index.html            # Production entry point for Vercel (semantic HTML & SEO)
+├── index.html            # Production entry point for Vercel (semantic HTML5, SEO & a11y)
 ├── vercel.json           # Vercel deployment headers and routing configuration
 ├── build.py              # Generator script to sync data/portfolio.json into index.html
-├── portfolio.py          # Python/Streamlit application (reads from data/ & css/)
+├── portfolio.py          # Python/Streamlit version (reads from data/ and css/)
 ├── requirements.txt      # Python dependencies (Streamlit)
 ├── .gitignore            # Git ignore rules for Python, cache, and Vercel
 │
 ├── data/
-│   └── portfolio.json    # Single source of truth for bio, skills, projects, and blogs
+│   └── portfolio.json    # Centralized data source for profile, skills, projects, and learning
 │
 ├── css/
-│   └── style.css         # Minimalist design system, typography, animations & dark theme
+│   └── style.css         # High-contrast, responsive dark theme design system
 │
 └── js/
-    └── main.js           # Client interactions (dynamic year, subtle hover effects)
+    └── main.js           # Accessible mobile menu, clipboard email copy & dynamic year
 ```
 
 ---
 
 ## 🛠️ How to Customize Your Content
 
-All personal content (profile information, projects, and learning updates) is neatly organized in **`data/portfolio.json`**.
+All personal content is neatly organized in **`data/portfolio.json`**:
+- **`profile`**: Name, headline, bio, about, email, and social profiles.
+- **`skills`**: Categorized into Programming, Web & Tools, and Current Focus.
+- **`projects`**: Project titles, descriptions, demonstrated skills, stack tags, and URLs.
+- **`learning_dispatches`**: Ongoing learning topics, active status, and focus descriptions.
 
-### 1. Edit your content
-Open `data/portfolio.json` and update:
-- **`profile`**: Name, bio, email, social links, focus areas.
-- **`projects`**: Add or modify projects (title, description, tech stack, URL).
-- **`blogs`**: Add or modify learning field notes and articles.
-
-### 2. Update the website
-After editing `data/portfolio.json`, update `index.html` by running:
+### Regenerate `index.html` after modifying `portfolio.json`:
 ```bash
 python build.py
 ```
-*(You can also edit `index.html` directly if you prefer HTML).*
 
 ---
 
 ## 💻 Running Locally
 
 ### Option A: Static Web (Instant)
-- **VS Code**: Install the *Live Server* extension and click "Go Live" on `index.html`.
+- **VS Code**: Install *Live Server* extension and click "Go Live" on `index.html`.
 - **Python Built-in Server**:
   ```bash
   python -m http.server 3000
   ```
-  Then open `http://localhost:3000` in your browser.
+  Then visit `http://localhost:3000`.
 
-### Option B: Streamlit App
-If you wish to run the app using Streamlit:
+### Option B: Streamlit Application
 ```bash
 pip install -r requirements.txt
 streamlit run portfolio.py
@@ -99,5 +89,5 @@ streamlit run portfolio.py
 
 ---
 
-## 🛡️ License & Author
-Created by **Mayank Rathi** — CSE student building toward a career in cybersecurity.
+## 🛡️ Author
+**Mayank Rathhi** — First-year Computer Science Engineering student exploring cybersecurity.
