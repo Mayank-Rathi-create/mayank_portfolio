@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 /* ============================================================
    DESIGN SYSTEM & VARIABLES
    Calm, technical, high-contrast dark aesthetic
@@ -30,9 +28,9 @@
     --focus-ring: #38bdf8;
 
     /* Typography */
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
     /* Spacing & Radii */
     --radius-sm: 6px;
@@ -73,6 +71,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Universal Link Reset (removes default browser blue/purple underlines) */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+a:visited {
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 /* Accessibility: Skip Link */
 .skip-link {
     position: absolute;
@@ -95,28 +110,48 @@ body {
     outline-offset: 2px;
 }
 
-/* Streamlit Container Neutralizer */
-.stApp {
-    background-color: var(--bg-canvas) !important;
-    color: var(--text-body) !important;
-    font-family: var(--font-sans) !important;
-}
-
-#MainMenu, header, footer {
+/* ============================================================
+   STREAMLIT PLATFORM ADAPTATIONS
+   Safely neutralizes Streamlit's chrome without hiding custom headers
+   ============================================================ */
+#MainMenu,
+header[data-testid="stHeader"],
+footer[data-testid="stFooter"],
+div[data-testid="stDecoration"],
+div[data-testid="stToolbar"] {
+    display: none !important;
     visibility: hidden !important;
     height: 0 !important;
 }
 
-.block-container {
-    max-width: 960px !important;
-    padding: 2rem 1.5rem !important;
+.stApp {
+    background-color: var(--bg-canvas) !important;
+    color: var(--text-body) !important;
+    font-family: var(--font-sans) !important;
+    letter-spacing: -0.01em;
 }
 
-/* Layout Container */
+.main .block-container,
+.block-container {
+    max-width: 960px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 4rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    width: 100% !important;
+}
+
+/* ============================================================
+   CONTAINER & LAYOUT
+   ============================================================ */
 .page-container {
     max-width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1.5rem;
+    width: 100%;
 }
 
 /* ============================================================
@@ -127,7 +162,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(9, 10, 15, 0.88);
+    background-color: rgba(9, 10, 15, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-subtle);
@@ -136,12 +171,14 @@ body {
 
 .header-inner {
     max-width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.9rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    width: 100%;
 }
 
 .brand-link {
@@ -355,24 +392,26 @@ body {
 
 .btn-primary {
     background: var(--accent-cyan);
-    color: #090a0f;
+    color: #090a0f !important;
     border: 1px solid var(--accent-cyan);
 }
 
 .btn-primary:hover {
     background: var(--accent-cyan-hover);
     border-color: var(--accent-cyan-hover);
+    color: #090a0f !important;
 }
 
 .btn-secondary {
     background: var(--bg-surface);
-    color: var(--text-headline);
+    color: var(--text-headline) !important;
     border: 1px solid var(--border-strong);
 }
 
 .btn-secondary:hover {
     background: var(--bg-surface-elevated);
     border-color: var(--accent-cyan);
+    color: var(--text-headline) !important;
 }
 
 .hero-socials {
@@ -474,7 +513,7 @@ body {
    ============================================================ */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -541,7 +580,7 @@ body {
    ============================================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -553,6 +592,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -648,7 +688,7 @@ body {
    ============================================================ */
 .learning-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -768,6 +808,7 @@ body {
 .contact-link-row:hover {
     border-color: var(--border-strong);
     background: #1c202d;
+    color: var(--text-headline);
 }
 
 .contact-link-info {
@@ -790,17 +831,20 @@ body {
     border-top: 1px solid var(--border-subtle);
     font-size: 0.85rem;
     color: var(--text-muted);
+    width: 100%;
 }
 
 .footer-inner {
     max-width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
 }
 
 .footer-credits {

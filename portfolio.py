@@ -71,9 +71,21 @@ ICONS = {
     ),
 }
 
-# Inject External CSS
+# Inject External CSS & Google Fonts reliably via st.markdown
 with open(CSS_FILE, "r", encoding="utf-8") as f:
-    st.html(f"<style>{f.read()}</style>")
+    CSS_CONTENT = f.read()
+
+st.markdown(
+    f"""
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+    {CSS_CONTENT}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 # 1. Header / Navigation
 st.html(
