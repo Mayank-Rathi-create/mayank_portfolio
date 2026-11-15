@@ -196,8 +196,6 @@ def build():
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-
-            <a href="#contact" class="header-cta-btn">Get in touch</a>
         </div>
     </header>
 
